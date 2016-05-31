@@ -32,6 +32,8 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 //        super.channelRead(ctx, msg);
         ByteBuf in = (ByteBuf) msg;
         System.out.println("Server receive: " + in.toString(CharsetUtil.UTF_8));
+//        in.writeInt(9999);
+        in.writeBytes(new byte[]{' ','k','e','v','i','n','!'});
         ctx.write(in);
     }
 
